@@ -24,7 +24,7 @@ Explanation: In this case, no transaction is done, i.e. max profit = 0.
 
 class maxProfitStock{
   public static void main(String[] args) {
-    int[] prices = {1,5,3,6,4};
+    int[] prices = {7,1,5,3,6,4};
     // int[] prices = {7,1};
     System.out.println(maxProfit(prices));
   }
@@ -43,11 +43,10 @@ class maxProfitStock{
     int maxProfit = 0;
 
     for (int i = 0 ; i<prices.length; i++) {
-
       System.out.println("Checking "+prices[i]);
       // check for new max
       if(prices[i]>max){
-        max=prices[1];
+        max=prices[i];
         indexOfMax = i;
       }
       //check for new min
@@ -57,18 +56,28 @@ class maxProfitStock{
       }
 
     }
+    // System.out.println(indexOfMax);
+    // System.out.println(indexOfMin);
+    // System.out.println(max);
+    // System.out.println(min);
     // work out profit
-    if(indexOfMax>=indexOfMin){
-      System.out.println("CHECKING PROFIT");
-      int profit = max-min;
-      if(profit>maxProfit){
-        maxProfit = profit;
+    if(indexOfMax>indexOfMin){
+      maxProfit = max-min;
+    }
+    else{
+      maxProfit = maxProfit(removeAtIndex(indexOfMax,prices));
+    }
+    return maxProfit;
+  }
+
+  public static int[] removeAtIndex(int index,int[] array){
+    int[] newArray = new int[array.length-1];
+    int j = 0;
+    for (int i =0; i<array.length;i++ ) {
+      if(i!=index){
+        newArray[j++] = array[i];
       }
     }
-    System.out.println(indexOfMax);
-    System.out.println(indexOfMin);
-    System.out.println(max);
-    System.out.println(min);
-    return maxProfit;
+    return newArray;
   }
 }
