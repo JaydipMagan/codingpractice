@@ -16,6 +16,12 @@ class word0{
     System.out.println(word0(strings)); // {"a": 0, "b": 0, "c": 0}
   }
 
+  /*
+    Function will solve the problem above following the specification.
+    Time complexity is going to be O(n)  n = number of strings in array
+    space complexity is goign to be O(n) where n = number of strings in array,
+    space of map increases linearly.
+  */
   public static Map<String, Integer> word0(String[] strings) {
     Map<String, Integer> map = new HashMap<String, Integer>();
     for (String c : strings) {
