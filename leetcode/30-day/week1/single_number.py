@@ -3,12 +3,11 @@ class Solution:
         seen = dict([ (p,0) for p in nums ])
         to_return = nums[0]
         for x in nums:
-            if seen[x]==0 or seen[x]==1:
+            if seen[x]==0:
+                to_return = x
+            elif seen[x]==1:
                 seen[x] = seen[x]+1
-        for x in seen:
-            if seen[x] == 1:
-                return x
-
+        return to_return
 
 s = Solution()
 a = s.singleNumber([4,1,2,1,2])
