@@ -5,7 +5,7 @@ class MinStack:
         initialize your data structure here.
         """
         self.stack = []
-        self.mins = []
+        self.sorted_stack = []
         self.size = -1
         
     def push(self, x: int) -> None:
