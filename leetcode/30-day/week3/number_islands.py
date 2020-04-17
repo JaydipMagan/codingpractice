@@ -11,10 +11,10 @@ class Solution:
             grid[i][j] ="0"
             
             # dfs on all directions
-            dfs(i-1,j,rows,columns)
-            dfs(i+1,j,rows,columns)
-            dfs(i,j+1,rows,columns)
-            dfs(i,j-1,rows,columns)
+            dfs(i-1,j,rows,columns,grid)
+            dfs(i+1,j,rows,columns,grid)
+            dfs(i,j+1,rows,columns,grid)
+            dfs(i,j-1,rows,columns,grid)
             
             
         
