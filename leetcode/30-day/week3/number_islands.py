@@ -28,7 +28,7 @@ class Solution:
                 point = row[j]
                 if point=="1":
                     islands+=1
-                    dfs(i,j,rows,columns)
+                    dfs(i,j,rows,columns,grid)
                     
         return islands
             
