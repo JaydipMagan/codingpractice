@@ -16,8 +16,6 @@ class Solution:
             dfs(i,j+1,rows,columns,grid)
             dfs(i,j-1,rows,columns,grid)
             
-            
-        
         islands = 0
         rows = len(grid)
         columns = len(grid[0])
