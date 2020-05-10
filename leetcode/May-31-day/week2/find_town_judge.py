@@ -51,14 +51,12 @@ class Solution:
         if n ==1:
             return 1
         trust_score = collections.Counter()
-        people_that_trust = collections.Counter()
+        not_judges = []
         for a,b in trust:
             trust_score[b]+=1
-            people_that_trust[a] = 1
-            people_that_trust[b] = people_that_trust[b]
-        
-        for person in people_that_trust:
-            if people_that_trust[person]==0 and trust_score[person]==n-1:
+            not_judges.append(a) # can't be judge anymore
+        for person in range(1,n+1):
+            if person not in not_judges and trust_score[person]==n-1:
                 return person
         return -1
             
