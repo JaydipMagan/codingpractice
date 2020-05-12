@@ -15,8 +15,17 @@ Note: Your solution should run in O(log n) time and O(1) space.
 """
 class Solution:
     def singleNonDuplicate(self, nums: List[int]) -> int:
-        output = nums[0]
-        for i in range(1,len(nums)):
-            output ^= nums[i]
+        if len(nums)==1:
+            return nums[0]
+        
+        l = 0
+        h = len(nums)//2
+    
+        while l<h:
+            m = l+(h-l)//2
+            if nums[2*m] != nums[2*m+1]:
+                h = m
+            else:
+                l = m + 1
+        return nums[2*l]
             
-        return output
