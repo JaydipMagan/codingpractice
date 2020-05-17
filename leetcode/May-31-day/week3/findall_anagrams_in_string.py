@@ -42,3 +42,30 @@ class Solution:
             groups[key].append(i)
         key = "".join(sorted(p))
         return groups[key]
+
+"""
+class Solution:
+    def findAnagrams(self, s: str, p: str) -> List[int]:
+        p = "".join(sorted(p))
+        l = len(p)
+        ls = len(s)
+        indicies = []
+
+        i = l -1
+        pre = False
+        while i < ls:
+            if pre and s[i] == s[i-l]:
+                indicies.append(i-l+1)
+                i += 1
+            elif s[i] in p:
+                if p == "".join(sorted(s[i-l+1:i+1])):
+                    indicies.append(i-l+1)
+                    pre = True
+                else:
+                    pre = False
+                i += 1
+            else:
+                i += l
+                pre = False
+        return indicies
+"""
