@@ -48,12 +48,12 @@ class Solution:
     def findAnagrams(self, s: str, p: str) -> List[int]:
         p = "".join(sorted(p))
         l = len(p)
-        ls = len(s)
+        n = len(s)
         indicies = []
 
         i = l -1
         pre = False
-        while i < ls:
+        while i < n:
             if pre and s[i] == s[i-l]:
                 indicies.append(i-l+1)
                 i += 1
