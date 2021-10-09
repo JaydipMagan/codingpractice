@@ -8,10 +8,10 @@ class Solution:
         counter = power 
 
         for i in range(0,n):
-            print("counter",counter)
+            #print("counter",counter)
             x = i+1
 
-            print(x)
+            #print(x)
             if power*2==x:
                 power = x
                 counter = power
@@ -21,7 +21,7 @@ class Solution:
             res = 1 + dp[offset]       
             dp.append(res)
         
-        print("dp",dp)
-
+        #print("dp",dp)
+        return dp
 s = Solution()
 s.countBits(16)
